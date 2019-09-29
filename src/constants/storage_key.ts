@@ -1,0 +1,3 @@
+export const USER = 'USER'
+
+export const TEST_ISINCOGNITOMODE = 'TEST_ISINCOGNITOMODE'
