@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import Button from 'antd/es/button'
+import './App.scss';
 import { RouteComponentProps  } from 'react-router-dom'
 
 interface Props {
 }
-
 
 class App extends React.Component<RouteComponentProps & Props> {
   private login = () => {
@@ -20,15 +20,7 @@ class App extends React.Component<RouteComponentProps & Props> {
           <p>
             Edit <code>src/App.tsx</code> and save to reload.
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <p className='login' onClick={this.login.bind(this)} >登录</p>
+          <Button type='primary' className='login' onClick={this.login.bind(this)} >测试路由</Button>
         </header>
     </div>
     )

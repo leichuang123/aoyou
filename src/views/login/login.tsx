@@ -1,5 +1,5 @@
 import React from 'react'
-import './login.css'
+import './login.scss'
 import { connect } from 'react-redux';
 import { login } from '../../actions/index';
 import { userProps } from '../../interface/user'
@@ -23,8 +23,7 @@ class Login extends React.Component<RouteComponentProps & Props> {
       <div>
         {
           user.id && <div>{ user && user.id }</div>
-        }
-        
+        }        
         <button onClick={this.btnClick}>{user.id ? '退出登录' : '登录'}</button>
       </div>
     )
