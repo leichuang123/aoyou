@@ -1,2 +1,9 @@
-export const TIMEOUT = 50000; // 超时时间（毫秒）
-export const BASE_URL = "https://www.baidu.com";
+export const TIMEOUT = 50000 // 超时时间（毫秒）
+// export const BASE_URL = "http://47.111.172.102:8030"
+export const BASE_URL = "http://47.111.2.18:8030"
+// export const BASE_URL = "http://116.62.172.166:8030"
+// export const BASE_URL = "http://192.168.6.197:8030"
+// export const BASE_URL = "http://localhost:3001"
+// export const BASE_URL = "http://192.168.6.201:8030"
+// export const BASE_URL = "http://192.168.6.74:8030"
+// export const BASE_URL = "http://192.168.6.220:8030"

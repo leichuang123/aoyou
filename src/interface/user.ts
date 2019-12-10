@@ -1,3 +1,3 @@
 export interface userProps {
-  id: Number
+  memberKey: String
 }

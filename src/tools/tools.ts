@@ -10,3 +10,18 @@ export const isIncognitoMode = () => {
     return true
   }
 }
+
+export const downloadXls = (content: string, filename = '') => {
+  let elink = document.createElement("a");
+  // 设置下载文件名
+  if (filename === '') {
+    filename = new Date().getTime() + '.xlsx'
+  }
+  elink.download = filename
+  elink.style.display = "none";
+  let blob = new Blob([content], {'type': 'application/vnd.ms-excel'});
+  elink.href = URL.createObjectURL(blob);
+  document.body.appendChild(elink);
+  elink.click();
+  document.body.removeChild(elink);
+}
