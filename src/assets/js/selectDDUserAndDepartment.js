@@ -20,6 +20,13 @@ const dingDingSelectTreeMixin = {
     methods: {
         // 调用钉钉原生的选择企业部门和用户的api
         selectCorporateDepartmentsAndUsers() {
+            // 先判断是否是在钉钉中运行此应用
+            if (dd.env.platform === "notInDingTalk") {
+                _g.toastMsg("fail", "请在钉钉中访问本应用！");
+                return new Promise((resolve, reject) => {
+                    resolve();
+                });
+            }
             let that = this;
             dd.biz.contact.complexPicker({
                 title: "选择部门成员", //标题
