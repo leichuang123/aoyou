@@ -1,37 +1,33 @@
 # yunny_dingding_h5
 
 #### 介绍
-企业管理-钉钉H5应用
+
+企业管理 CRM-钉钉 H5 应用
 
 #### 软件架构
-软件架构说明
 
+1.  vue-cli3
+2.  vue^2.6.11
+3.  vant^2.2.1
+4.  钉钉 SDK^2.13.40
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  npm-install
+2.  参考.env.example，新建.env 项目配置文件
+3.  npm-serve 运行项目
+4.  npm-build 打包项目
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  需要在钉钉环境中打开
+2.  日常开发浏览器不能调用钉钉 SDK，需要在https://open-dev.dingtalk.com/apiExplorer?spm=ding_open_doc.document.0.0.4ec82ff47fuFV1#/jsapi?api=runtime.permission.requestAuthCode 模拟调用
 
-#### 参与贡献
+#### 项目说明
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1.  server/api.js 封装的请求
+2.  views/empl 界面文件
+3.  global.js 公共方法
+4.  main.js 入口 js 文件
+5.  router.js 路由文件
+6.  store.js 全局状态
