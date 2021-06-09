@@ -19,7 +19,7 @@ export default {
     components: {},
     data() {
         return {
-            authCode: '',
+            authCode: '5d827b9bde373f2db3306f5dbc6fe3ab',
         };
     },
     computed: {
@@ -32,10 +32,6 @@ export default {
     },
     mounted() {
         this.hasToken();
-        // this.$store.dispatch(
-        //     'cacheToken',
-        //     'eyJhbGciOiJIUzI1NiJ9.eyJjb21wYW55Q29kZSI6ImFveW91IiwidW5pb25JZCI6ImJGTEtjUmJpUEJBVERmZ2xMTU9maWk1Z2lFaUUiLCJleHAiOjE2MjI3MTQ5NzF9.ND0yPZNRkjDqYvtadihC6xnBIU6pDZHT-SRM6a3V2RQ'
-        // );
     },
     methods: {
         // 跳转至首页
@@ -84,6 +80,7 @@ export default {
                 authCode: this.authCode,
             };
             let loginUrl = '/login/dingtalk/autoLogin' + _g.stringifyQuery(loginParam);
+            console.log(loginParam, loginUrl);
             _api.post(loginUrl).then((res) => {
                 if (res.code == 200) {
                     this.$store.dispatch('cacheToken', res.data.token);

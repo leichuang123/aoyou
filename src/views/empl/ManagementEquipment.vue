@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="scroll-white bottom50">
-            <div class="equipment_info">
+            <div class="equipment_info" v-if="loaded">
                 <div class="equipment_info_row">
                     <span>公司名称：</span>
                     <div class="company_name">
@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="isFlex">
-                <van-cell-group class="equipment_grid" v-if="loaded">
+                <van-cell-group class="equipment_grid" v-if="loaded && resourceList.length">
                     <van-cell title="设备" v-if="resourceList.includes('/device/list')" is-link to="/my-equipment" />
                     <van-cell title="成员" v-if="resourceList.includes('/employee/list')" is-link @click="selectDepartmentAndUser" />
                     <van-cell title="角色" v-if="resourceList.includes('/role/list')" is-link to="/role-list" />
@@ -56,6 +56,12 @@ export default {
                     this.resourceList = res.data.resourceList.map((item) => {
                         return item.url;
                     });
+                    if (!this.resourceList.length) {
+                        _g.toastMsg('fail', '暂无权限', 1500, false, () => {
+                            this.$router.push('/customer-home');
+                        });
+                        return;
+                    }
                     this.loaded = true;
                     this.$store.commit('saveUserInfo', res.data);
                     return;

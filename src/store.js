@@ -13,8 +13,7 @@ export default new Vuex.Store({
         corpId: "dingb5333b8c08fbe16b35c2f4657eb6378f",
         // 微应用id
         appId: process.env.VUE_APP_ID,
-        userToken:
-            "eyJhbGciOiJIUzI1NiJ9.eyJjb21wYW55Q29kZSI6ImFveW91IiwidW5pb25JZCI6ImJGTEtjUmJpUEJBVERmZ2xMTU9maWk1Z2lFaUUiLCJleHAiOjE2MjI3MTQ5NzF9.ND0yPZNRkjDqYvtadihC6xnBIU6pDZHT-SRM6a3V2RQ"
+        userToken: ""
     },
     getters: {
         /**
