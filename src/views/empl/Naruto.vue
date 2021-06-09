@@ -43,11 +43,11 @@ export default {
     },
     mounted() {
         if (this.$route.query.departmentIds) {
-            let departmentIds = this.$route.query.departmentIds;
+            let departmentIds = JSON.parse(this.$route.query.departmentIds);
             this.initData(departmentIds, 'departmentIds');
         }
         if (this.$route.query.employeddIds) {
-            let employeddIds = this.$route.query.employeddIds;
+            let employeddIds = JSON.parse(this.$route.query.employeddIds);
             this.initData(employeddIds, 'employeddIds');
         }
         this.getNarutoList();

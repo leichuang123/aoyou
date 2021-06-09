@@ -17,7 +17,7 @@ const passWordFreeLogin = {
             dd.runtime.permission.requestAuthCode({
                 corpId: corpId, // 企业id
                 onSuccess: function(info) {
-                    _that.authCode = info.authCode;
+                    _that.authCode = info.code;
                 },
                 onFail: function(err) {
                     _g.toastMsg("fail", JSON.stringify(err));

@@ -39,7 +39,9 @@ export default {
         getRoleDetail() {
             _api.post('/companyRoleResource/roleHaveResourceList', { roleId: this.roleId }).then((res) => {
                 if (res.code == 200) {
-                    this.rolePermission=res.data;
+                    this.rolePermission = res.data.map((item) => {
+                        return item.id;
+                    });
                     return;
                 }
                 _g.toastMsg('fail', res.message);

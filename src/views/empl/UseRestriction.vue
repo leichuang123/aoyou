@@ -67,7 +67,7 @@ export default {
                 if (res.code == 200) {
                     this.deviceNo = res.data.deviceNo;
                     this.strategy = res.data.strategy.toString();
-                    this.employeeIds = !res.data.employeeIds ? [] : res.data.employeeIds;
+                    this.employeddIds = !res.data.employeeIds ? [] : res.data.employeeIds;
                     this.departmentIds = !res.data.departmentIds ? [] : res.data.departmentIds;
                 }
             });
@@ -82,9 +82,7 @@ export default {
         },
         // 调用钉钉sdk展示选择人和部门
         selectUser() {
-            this.selectCorporateDepartmentsAndUsers().then((departmentIds, employeddIds) => {
-                console.log(departmentIds, employeddIds);
-            });
+            this.selectCorporateDepartmentsAndUsers();
         },
         // 确认设置设备使用类型
         sureSetUseRestriction() {

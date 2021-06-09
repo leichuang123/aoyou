@@ -18,9 +18,7 @@ export default {
     name: 'CustomerHome',
     components: {},
     data() {
-        return {
-            authCode: '5d827b9bde373f2db3306f5dbc6fe3ab',
-        };
+        return {};
     },
     computed: {
         currentCorpId() {
@@ -64,23 +62,21 @@ export default {
                 dd.runtime.permission.requestAuthCode({
                     corpId: _that.currentCorpId,
                     onSuccess: function (info) {
-                        _that.authCode = info.authCode; // 通过该免登授权码可以获取用户身份
-                        _that.getUserInfoByCode();
+                        _that.getUserInfoByCode(info.code);
                     },
                     onFail: function (err) {
-                        _g.toastMsg('fail', JSON.stringify(err));
+                        _g.toastMsg('fail', '免密登录加载失败：' + JSON.stringify(err), 3000);
                     },
                 });
             });
         },
         // 通过临时凭证获取用户信息和token
-        getUserInfoByCode() {
+        getUserInfoByCode(code) {
             let loginParam = {
                 corpId: this.currentCorpId,
-                authCode: this.authCode,
+                authCode: code,
             };
             let loginUrl = '/login/dingtalk/autoLogin' + _g.stringifyQuery(loginParam);
-            console.log(loginParam, loginUrl);
             _api.post(loginUrl).then((res) => {
                 if (res.code == 200) {
                     this.$store.dispatch('cacheToken', res.data.token);

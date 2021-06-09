@@ -10,7 +10,7 @@ export default new Vuex.Store({
         itemTitle: process.env.VUE_APP_NAME,
         useInfo: {},
         // 企业id
-        corpId: "dingb5333b8c08fbe16b35c2f4657eb6378f",
+        corpId: "",
         // 微应用id
         appId: process.env.VUE_APP_ID,
         userToken: ""
