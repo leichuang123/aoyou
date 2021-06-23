@@ -34,9 +34,14 @@ export default {
                 createTime: null,
                 sort: 0,
             },
+            isAddRole: false,
         };
     },
     mounted() {
+        if (!this.$route.query.roleId) {
+            this.isAddRole = true;
+            return;
+        }
         this.getRoleDetail();
     },
     methods: {
@@ -51,10 +56,31 @@ export default {
                 this.roleForm = res.data;
             });
         },
+        // 新增角色
+        addThisRole() {
+            let addParams = {
+                name: this.roleForm.name,
+                description: this.roleForm.description,
+                status: this.roleForm.status,
+            };
+            _api.post('/companyRole/create', addParams).then((res) => {
+                if (res.code !== 200) {
+                    _g.toastMsg('fail', res.message);
+                    return;
+                }
+                _g.toastMsg('success', '操作成功', 1500, false, () => {
+                    this.$router.push('/role-list');
+                });
+            });
+        },
         // 保存编辑角色
         saveEdit() {
             if (this.roleForm.name == '') {
                 return _g.toastMsg('fail', '请填写角色名称！', 1500);
+            }
+            if (this.isAddRole) {
+                this.addThisRole();
+                return;
             }
             _g.confirmMsg('', '是否确认修改该角色？', true, () => {
                 let updateParams = {

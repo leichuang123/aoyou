@@ -52,7 +52,7 @@ function checkStatus(response) {
             resolve(response.data);
         } else {
             return response
-                ? _g.confirmMsg("", "网络异常，请检查稍后重试！", true)
+                ? _g.confirmMsg("", JSON.stringify(response), true)
                 : null;
         }
     });

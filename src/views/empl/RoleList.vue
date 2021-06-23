@@ -24,6 +24,9 @@
                     </div>
                 </van-list>
             </van-pull-refresh>
+            <div class="addRole">
+                <van-button type="primary" block class="equipment_button_ground" @click="addRole">添加角色</van-button>
+            </div>
         </div>
     </div>
 </template>
@@ -108,6 +111,12 @@ export default {
             this.currentPage = 1;
             this.roleList = [];
             this.getRoleList();
+        },
+        // 新增角色
+        addRole() {
+            this.$router.push({
+                path: '/edit-role',
+            });
         },
     },
 };
@@ -197,5 +206,17 @@ export default {
 }
 .dotIsConfirmed {
     background-color: #505ead;
+}
+.addRole {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 20px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.equipment_button_ground {
+    width: 50%;
 }
 </style>

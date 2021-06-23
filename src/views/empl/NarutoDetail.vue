@@ -13,7 +13,6 @@
                 </van-cell>
                 <van-cell title="手机号" is-link :value="mobile">
                 </van-cell>
-                <van-cell title="加入时间"></van-cell>
             </van-cell-group>
             <div class="status-box" v-if="status !=='0'">
                 <van-button style="border:none;height:70px" @click="updateStatus('0')">
@@ -70,13 +69,13 @@ export default {
             this.showPicker = true;
         },
         // 选择角色弹出层回调
-         onConfirm(value) {
+        onConfirm(value) {
             this.showPicker = false;
             this.roleName = value.text;
             this.roleId = value.id;
-            this.$nextTick(()=>{
-                this.saveNarutoRole()
-            })
+            this.$nextTick(() => {
+                this.saveNarutoRole();
+            });
         },
         // 保存成员角色
         saveNarutoRole() {
