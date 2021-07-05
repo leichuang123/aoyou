@@ -4,11 +4,8 @@
             <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
                 <van-list class="equipment_box" v-model="loading" :error.sync="error" error-text="请求失败，点击重新加载" :finished="finished" finished-text="暂无更多数据" @load="onLoad">
                     <div class="equipment_item" v-for="(equipmentItem,index) in equipmentList" :key="equipmentItem.deviceNo">
-                        <div class="equipment_number">
-                            主机：{{equipmentItem.machineId}}
-                        </div>
                         <div class="equipment_item_inner">
-                            <span class="item_inner_tit">盒子串号：</span><span>{{equipmentItem.deviceNo}}</span>
+                            盒子串号：{{equipmentItem.deviceNo}}
                         </div>
                         <div class="equipment_item_inner">
                             绑定手机：{{equipmentItem.mobile}}
@@ -147,7 +144,6 @@ export default {
 }
 .equipment_item_inner {
     margin-bottom: 11px;
-    max-width: 70%;
     display: flex;
 }
 .item_inner_tit {

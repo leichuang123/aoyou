@@ -57,7 +57,9 @@ window.HOST = window.location.protocol + "//" + window.location.host;
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 window.axios.defaults.headers["Content-Type"] = "application/json";
 // 统一调用前缀，根据实际项目情况配置
-let baseURL = window.HOST + process.env.VUE_APP_API_PRE;
+let baseURL = "https://dcallback.yunzhiqu.com";
+//window.HOST + process.env.VUE_APP_API_PRE;
+
 window.axios.defaults.baseURL = baseURL;
 window._api.baseURL = baseURL;
 

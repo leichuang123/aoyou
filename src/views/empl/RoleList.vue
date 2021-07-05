@@ -14,9 +14,9 @@
                         <div class="equipment_item_inner">
                             角色说明：{{equipmentItem.description}}
                         </div>
-                        <div class="equipment_item_inner isFlex">
+                        <!-- <div class="equipment_item_inner isFlex">
                             <span>加入时间：{{equipmentItem.roleName}}</span>
-                        </div>
+                        </div> -->
                         <div class="button-box">
                             <van-button type="default" style="width:50%;border-left:none;border-right:none;border-bottom:none;color: #4e9ffb;" @click="editCurrentRolePermissions(equipmentItem.id)">权限配置</van-button>
                             <van-button type="default" style="width:50%;border-right:none;border-bottom:none;color: #4e9ffb;" class="isEdit" @click="editCurrentRole(equipmentItem.id)">编辑</van-button>
@@ -24,9 +24,9 @@
                     </div>
                 </van-list>
             </van-pull-refresh>
-            <div class="addRole">
-                <van-button type="primary" block class="equipment_button_ground" @click="addRole">添加角色</van-button>
-            </div>
+        </div>
+        <div class="addRole">
+            <van-button type="primary" block class="equipment_button_ground" @click="addRole">添加角色</van-button>
         </div>
     </div>
 </template>
@@ -124,7 +124,7 @@ export default {
 
 <style scoped>
 .bottom50 {
-    bottom: 40px;
+    bottom: 60px;
 }
 .equipment_box {
     display: flex;

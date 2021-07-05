@@ -32,7 +32,8 @@ const dingDingSelectTreeMixin = {
         // 钉钉sdk鉴权
         getAuthentication() {
             // 正式服为： window.HOST + "/empl",本地开发用内网穿透工具
-            let baseUrl = window.HOST + "/";
+            let baseUrl = window.HOST + "/empl";
+            //window.HOST + "/";
             //"http://meyv67.natappfree.cc/empl";
 
             _api.get("/dd/common/signInfo", { url: baseUrl }).then(res => {

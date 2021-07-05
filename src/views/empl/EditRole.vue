@@ -11,7 +11,7 @@
                     <van-field label="角色名称" label-class='label-color' v-model="roleForm.name" placeholder="输入角色名称" input-align="right" />
                     <van-cell title="角色说明" :border='false'>
                     </van-cell>
-                    <van-field v-model="roleForm.description" rows="8" autosize type="textarea" placeholder="输入文字说明..." />
+                    <van-field v-model="roleForm.description" rows="8" autosize type="textarea" placeholder="输入文字说明..." maxlength="50" show-word-limit />
                 </van-cell-group>
             </div>
             <div class="button-box">
