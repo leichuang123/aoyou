@@ -1,54 +1,91 @@
 {
-  "name": "manager",
+  "name": "yunny",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@ant-design/icons": "^4.0.6",
-    "@types/jest": "24.0.18",
-    "@types/node": "12.7.8",
-    "@types/react": "16.9.3",
-    "@types/react-dom": "16.9.1",
-    "@types/react-redux": "^7.1.4",
-    "@types/react-router-dom": "^5.1.0",
-    "antd": "^3.23.6",
-    "axios": "^0.19.0",
-    "node-sass": "^4.12.0",
-    "qs": "^6.9.3",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-redux": "^7.1.1",
-    "react-router-dom": "^5.1.0",
-    "react-scripts": "3.1.2",
-    "redux": "^4.0.4",
-    "typescript": "3.6.3"
-  },
   "scripts": {
-    "start": "cross-env REACT_APP_ENV=development react-scripts start",
-    "start:test": "cross-env REACT_APP_ENV=test react-scripts start",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build": "cross-env REACT_APP_ENV=production react-scripts build",
-    "build:dev": "cross-env REACT_APP_ENV=development react-scripts build",
-    "build:test": "cross-env REACT_APP_ENV=test react-scripts build",
-    "build:preview": "cross-env REACT_APP_ENV=preview react-scripts build"
+    "serve": "cross-env VUE_APP_BUILD_ENV=development vue-cli-service serve",
+    "serve:test": "cross-env VUE_APP_BUILD_ENV=test vue-cli-service serve",
+    "build:dev": "cross-env VUE_APP_BUILD_ENV=development vue-cli-service build",
+    "build:test": "cross-env VUE_APP_BUILD_ENV=test vue-cli-service build",
+    "build:xjj": "cross-env VUE_APP_BUILD_ENV=xjj vue-cli-service build",
+    "build:preview": "cross-env VUE_APP_BUILD_ENV=preview vue-cli-service build",
+    "build": "cross-env VUE_APP_BUILD_ENV=production vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "core-js": "^3.6.5",
+    "cross-env": "^7.0.2",
+    "css-loader": "^3.5.3",
+    "element-ui": "^2.15.2",
+    "js-md5": "^0.7.3",
+    "normalize.css": "^8.0.1",
+    "qrcodejs2": "^0.0.2",
+    "qs": "^6.9.4",
+    "register-service-worker": "^1.7.1",
+    "style-loader": "^1.2.1",
+    "swiper": "^6.1.2",
+    "uuid": "^8.3.2",
+    "vue": "^2.6.11",
+    "vue-awesome-swiper": "3.1.3",
+    "vue-multiple-message": "^1.1.0",
+    "vue-photo-preview": "^1.1.3",
+    "vue-router": "^3.2.0",
+    "vuetify": "^2.2.11",
+    "vuex": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.4.0",
+    "@vue/cli-plugin-e2e-cypress": "^4.4.0",
+    "@vue/cli-plugin-eslint": "^4.4.0",
+    "@vue/cli-plugin-pwa": "^4.4.0",
+    "@vue/cli-plugin-router": "^4.4.0",
+    "@vue/cli-plugin-unit-jest": "^4.4.0",
+    "@vue/cli-plugin-vuex": "^4.4.0",
+    "@vue/cli-service": "^4.4.0",
+    "@vue/test-utils": "^1.0.3",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "less": "^3.0.4",
+    "less-loader": "^5.0.0",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0",
+    "vue-cli-plugin-vuetify": "^2.0.7",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.3.0",
+    "webpack-bundle-analyzer": "^3.8.0"
   },
   "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {},
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
     ]
   },
-  "homepage": ".",
-  "devDependencies": {
-    "cross-env": "^7.0.2"
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "jest": {
+    "preset": "@vue/cli-plugin-unit-jest"
   }
 }

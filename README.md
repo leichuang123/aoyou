@@ -1,11 +1,35 @@
-#### 项目说明
-#### 访问地址：https://manage.yunzhiqu.com
+# yunny
 
-#### src/actions  全局修改状态类型
-#### src/config 网络请求和全局配置文件
-#### src/constants 全局常量配置
-#### src/interface typescrip相关配置
-#### src/reducers 全局状态配置
-#### src/server 网络请求封装文件
-#### src/tools 工具类文件
-#### src/view 页面布局文件
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Run your unit tests
+```
+yarn test:unit
+```
+
+### Run your end-to-end tests
+```
+yarn test:e2e
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
