@@ -1,33 +1,19 @@
-# yunny_dingding_h5
+# 项目说明
 
-#### 介绍
+## 此项目主要用于盒子策略和角色管理
 
-企业管理 CRM-钉钉 H5 应用
+## src/actions 全局修改状态类型
 
-#### 软件架构
+## src/config 网络请求和全局配置文件
 
-1.  vue-cli3
-2.  vue^2.6.11
-3.  vant^2.2.1
-4.  钉钉 SDK^2.13.40
+## src/constants 全局常量配置
 
-#### 安装教程
+## src/interface typescrip 相关配置
 
-1.  npm-install
-2.  参考.env.example，新建.env 项目配置文件
-3.  npm-serve 运行项目
-4.  npm-build 打包项目
+## src/reducers 全局状态配置
 
-#### 使用说明
+## src/server 网络请求封装文件
 
-1.  需要在钉钉环境中打开
-2.  日常开发浏览器不能调用钉钉 SDK，需要在https://open-dev.dingtalk.com/apiExplorer?spm=ding_open_doc.document.0.0.4ec82ff47fuFV1#/jsapi?api=runtime.permission.requestAuthCode 模拟调用
+## src/tools 工具类文件
 
-#### 项目说明
-
-1.  server/api.js 封装的请求
-2.  views/empl 界面文件
-3.  global.js 公共方法
-4.  main.js 入口 js 文件
-5.  router.js 路由文件
-6.  store.js 全局状态
+## src/view 页面布局文件

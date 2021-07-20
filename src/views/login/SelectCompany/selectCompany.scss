@@ -1,0 +1,89 @@
+.module-comm-page {
+    .module-comm-back {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 12px;
+        cursor: pointer;
+    }
+
+    .module-comm-back:hover {
+        color: #2364e8;
+    }
+
+    .module-comm-page-title {
+        display: block;
+        margin: 0 auto 10px;
+        line-height: 35px;
+        font-size: 24px;
+        color: #171a1d;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .module-comm-page-desc {
+        display: block;
+        margin: 0 auto;
+        line-height: 25px;
+        font-size: 14px;
+        color: rgba(23, 26, 29, 0.6);
+        text-align: left;
+    }
+
+    .module-corp-sel-list {
+        margin: 13px auto 0;
+        height: 204px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    .module-corp-sel-listitem {
+        width: 96%;
+        position: relative;
+        box-sizing: border-box;
+        margin-top: 8px;
+        padding: 10px 44px 10px 70px;
+        background: #ededed;
+        border-radius: 8px;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    .module-corp-sel-listitem:hover {
+        transform: translateX(4px);
+    }
+
+    .module-corp-sel-listitem-avatar {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        left: 10px;
+        top: 10px;
+        overflow: hidden;
+        border-radius: 4px;
+    }
+
+    .module-corp-sel-listitem-name {
+        margin-left: 10px;
+    }
+
+    .module-corp-sel-listitem-go {
+        position: absolute;
+        top: 14px;
+        right: 12px;
+    }
+
+    .empty-company {
+        margin-top: 30px
+    }
+
+    .createNewCom {
+        position: absolute;
+        text-align: center;
+        left: 0;
+        bottom: 8px;
+        width: 100%;
+    }
+}

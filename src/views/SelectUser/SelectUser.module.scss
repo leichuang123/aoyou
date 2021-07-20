@@ -1,0 +1,49 @@
+.organization_page {
+    height: 600px;
+}
+
+.organization_box {
+    position: relative;
+    height: 100%;
+}
+
+.tree {
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 2px;
+    bottom: 0;
+    border: 2px solid #f2f2f2;
+    box-sizing: border-box;
+    padding: 20px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.list {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 200px;
+    border: 2px solid #f2f2f2;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.children_dataItem {
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 12px 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.children_dataItem:hover {
+    background: #f7f7f7;
+}
+
+.site_tree_search_value {
+    color: #eb5c62;
+}

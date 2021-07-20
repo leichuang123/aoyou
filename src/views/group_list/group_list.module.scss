@@ -1,0 +1,30 @@
+
+
+.card {
+  display: inline-block;
+  width: 400px;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  .btn {
+    margin-left: 12px;
+  }
+}
+
+.createName {
+  width: 260px;
+}
+
+.itemLabel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.xin {
+  display: inline-block;
+  margin-right: 4px;
+  color: #ff4d4f;
+  font-size: 16px;
+  position: relative;
+  top: 2px;
+}

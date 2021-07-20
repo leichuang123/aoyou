@@ -1,0 +1,69 @@
+/*暂时只用到
+$aoyou-color-primary
+$aoyou-content-width
+$aoyou-bg-color-black
+*/
+
+
+/* 行为相关颜色 */
+$aoyou-color-primary: #83B9D1;
+$aoyou-color-success: #4cd964;
+$aoyou-color-warning: #f0ad4e;
+$aoyou-color-error: #dd524d;
+
+/* 文字基本颜色 */
+$aoyou-text-color:#333; //基本色
+$aoyou-text-color-inverse:#fff; //反色
+$aoyou-text-color-grey:#999; //辅助灰色，如加载更多的提示信息
+$aoyou-text-color-placeholder: #808080;
+$aoyou-text-color-disable:#c0c0c0;
+
+/* 背景颜色 */
+$aoyou-bg-color:#ffffff;
+$aoyou-bg-color-grey:#f8f8f8;
+$aoyou-bg-color-black: #2C2D3B;
+$aoyou-bg-color-hover:#f1f1f1; //点击状态颜色
+$aoyou-bg-color-mask:rgba(0, 0, 0, 0.4); //遮罩颜色
+
+/* 边框颜色 */
+$aoyou-border-color:#c8c7cc;
+
+/* 尺寸变量 */
+$aoyou-content-width: 1200px;
+
+/* 文字尺寸 */
+$aoyou-font-size-sm:24px;
+$aoyou-font-size-base:28px;
+$aoyou-font-size-lg:32px;
+
+/* 图片尺寸 */
+$aoyou-img-size-sm:40px;
+$aoyou-img-size-base:52px;
+$aoyou-img-size-lg:80px;
+
+/* Border Radius */
+$aoyou-border-radius-sm: 4px;
+$aoyou-border-radius-base: 6px;
+$aoyou-border-radius-lg: 12px;
+$aoyou-border-radius-circle: 50%;
+
+/* 水平间距 */
+$aoyou-spacing-row-sm: 10px;
+$aoyou-spacing-row-base: 20px;
+$aoyou-spacing-row-lg: 30px;
+
+/* 垂直间距 */
+$aoyou-spacing-col-sm: 8px;
+$aoyou-spacing-col-base: 16px;
+$aoyou-spacing-col-lg: 24px;
+
+/* 透明度 */
+$aoyou-opacity-disabled: 0.3; // 组件禁用态的透明度
+
+/* 文章场景相关 */
+$aoyou-color-title: #2C405A; // 文章标题颜色
+$aoyou-font-size-title:40px;
+$aoyou-color-subtitle: #555555; // 二级标题颜色
+$aoyou-font-size-subtitle:36px;
+$aoyou-color-paragraph: #3F536E; // 文章段落颜色
+$aoyou-font-size-paragraph:30px;

@@ -1,0 +1,142 @@
+@import '~antd/dist/antd.css';
+@import './common/style/base.scss';
+
+.none {
+  display: none!important;
+}
+  
+.App {
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  .hidden {
+    visibility: hidden;
+  }
+
+  .logo {
+    min-height: 64px;
+    margin: 0 auto;
+    background-image: url('./assets/images/public/logo-white.png');
+    background-size: 60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  .app-header {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .loginout {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  .app-content {
+    height: 100%;
+    background: white;
+  }
+  .global-spin {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $aoyou-bg-color-mask;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	.anim {
+		height: 60px;
+		width: 60px;
+		right: 0;
+		left: 0;
+		z-index: 10;
+		margin-right: 40px;
+		display: inline-block;
+		position: relative;
+		-webkit-transition: all 0.3s ease-in-out 0;
+		transition: all 0.3s ease-in-out 0;
+		.double-bounce {
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			background-color: #fff;
+			opacity: 0.6;
+			position: absolute;
+			top: 0;
+			left: 0;
+			-webkit-animation: bounce 2.0s infinite ease-in-out;
+			animation: bounce 2.0s infinite ease-in-out;
+		}
+		.double-bounce2 {
+			-webkit-animation-delay: -1.0s;
+			animation-delay: -1.0s;
+		}
+	}
+  }
+  .page {
+    background: white;
+    padding: 20px;
+    .search {
+      padding: 30px;
+      text-align: center;
+      margin: 0 auto;
+      .ant-form-item {
+        margin-right: 60px;
+      }
+      .export-btn {
+        margin-left: 20px;
+      }
+    }
+    .pagination {
+      margin-top: 20px;
+    }
+  }
+}
+
+.flex-center {
+	display: flex;
+	align-items: center;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-around {
+  justify-content: space-around
+}
+
+.vendor-diver {
+  margin-top: 24px;
+}
+
+#root,
+.App,
+.app-container {
+  height: 100%;
+}
+
+@-webkit-keyframes bounce {
+	0%, 100% {
+		-webkit-transform: scale(0)
+	}
+
+	50% {
+		-webkit-transform: scale(1)
+	}
+}
+
+@keyframes bounce {
+	0%, 100% {
+		transform: scale(0);
+		-webkit-transform: scale(0)
+	}
+
+	50% {
+		transform: scale(1);
+		-webkit-transform: scale(1)
+	}
+}
+
