@@ -1,0 +1,60 @@
+.login-contain{
+  // padding: 0 50px;
+  font-size: $fontsize-l7;
+  color: $color-l1-l;
+}
+.icon{
+  width: 35px;
+  height: 16px;
+  border-right: 1px solid $color-line;
+  display: flex;
+  justify-content: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  img{
+    height: 16px;
+  }
+}
+.space{
+  padding: 0 37px;
+}
+.tipimg{
+  height: 23px;
+}
+.flex-center{
+  display: flex;
+  align-items: center;
+}
+.flex-space{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.check{
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 0 7px;
+}
+.click-text{
+  color: $color-primary3;
+}
+.text-center{
+  text-align: center;
+  font-size: $fontsize-l7;
+  letter-spacing:-2px;
+  span{
+    font-size: $fontsize-l7;
+    color: $color-primary3;
+    letter-spacing:-1px;
+  }
+}
+.scale-text{
+  transform: scale(0.6666);
+  word-break:keep-all; 
+  white-space:nowrap; 
+  margin: 0 auto;
+}
+.tologin{
+  font-size: $fontsize-l6;
+}

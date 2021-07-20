@@ -1,0 +1,35 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+}
+body{
+  font-size: $fontsize-l5;
+}
+body, #app, .contain{
+  width: 100vw;
+  height: 100vh;
+  min-height: 768px;
+  min-width: 1366px;
+  overflow-y: scroll;
+  box-sizing: border-box; // 弹窗body会加宽
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+button{
+  border: 0 none;
+  outline: 0 none;
+  cursor: pointer;
+}
+input{
+  background: none;
+  outline: none;
+  border: none;
+}
+.cursor{
+  cursor: pointer;
+}
+.reflect{
+  -webkit-box-reflect: below 5px linear-gradient(transparent 60%,rgba(0,0,0,.3));
+}
