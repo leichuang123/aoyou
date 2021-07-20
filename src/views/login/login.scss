@@ -1,121 +1,48 @@
 .login {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://lovetime.gitee.io/weadmin/static/images/bg.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-
-    .login-form {
-        padding: 0 20px;
-        width: 350px;
-        height: 380px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        margin: -175px 0 0 -190px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -o-box-sizing: border-box;
-        box-sizing: border-box;
-        background: #fff;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        box-shadow: 0 0 50px #009688;
-
-        .login_face {
-            margin: -55px auto 20px;
-            width: 100px;
-            height: 100px;
-            -webkit-border-radius: 50%;
-            -moz-border-radius: 50%;
-            border-radius: 50%;
-            border: 5px solid #fff;
-            overflow: hidden;
-            box-shadow: 0 0 30px #009688;
-
-            .userAvatar {
-                width: 100%;
-            }
-        }
-
-        .login-form-button {
-            margin: 0 auto;
-            width: 160px;
-        }
-
-        .text-center {
-            text-align: center;
-            position: absolute;
-            width: 100%;
-            left: 0;
-            bottom: 10px;
-        }
-
-        .module-qrcode-login-title {
-            height: 30px;
-            line-height: 30px;
-            font-size: 20px;
-            color: #171a1d;
-            text-align: center;
-            font-weight: bold;
-            text-align: center;
-            position: absolute;
-            top: 50px;
-            left: 50%;
-            margin-left: -20px;
-            z-index: 399;
-        }
-
-        #login_container {
-            text-align: center;
-            height: 250px;
-        }
-
-        .ddcode-box {
-            position: relative;
-        }
-
-        .ddcode-load {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-left: -21px;
-            margin-top: -23px;
-        }
-
-        .loadCodeing {
-            opacity: 0;
-        }
-
-        .loadCodeSuccess {
-            opacity: 1;
-        }
-
-        .ddcode-has-scan {
-            position: absolute;
-            width: 100%;
-            height: 300px;
-            left: 0;
-            top: 66px;
-            background-color: #ffffff;
-        }
-
-        .out-date-text {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: hsla(0, 0%, 100%, 0.9);
-            height: 300px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('https://lovetime.gitee.io/weadmin/static/images/bg.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+  .login-form {
+    padding: 0 20px;
+	width: 300px;
+	// height: 335px;
+	height: 260px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -150px 0 0 -150px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #fff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: 0 0 50px #009688;
+	.login_face {
+	    margin: -55px auto 20px;
+	    width: 100px;
+	    height: 100px;
+	    -webkit-border-radius: 50%;
+	    -moz-border-radius: 50%;
+	    border-radius: 50%;
+	    border: 5px solid #fff;
+	    overflow: hidden;
+	    box-shadow: 0 0 30px #009688;
+		.userAvatar {
+		    width: 100%;
+		}
+	}
+    .login-form-button {
+      margin: 0 auto;
+	  width: 160px;
     }
+  }
 }

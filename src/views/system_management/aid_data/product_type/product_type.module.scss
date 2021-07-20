@@ -1,0 +1,32 @@
+
+
+.productType {
+  padding-top: 100px;
+  min-height: 600px;
+  .form {
+    margin-left: 100px;
+    width: 500px;
+    .btnRow {
+      text-align: center;
+    }
+  }
+  .treeTitle {
+    .name {
+      display: inline-block;
+      padding-right: 40px;
+    }
+  }
+  .gray {
+    color: rgba(0, 0, 0, 0.25)
+  }
+  .search {
+    width: 200px;
+    margin-bottom: 80px;
+    margin-left: 200px;
+  }
+  .content {
+    justify-content: flex-start;
+    padding-left: 200px;
+  }
+}
+

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "suppressImplicitAnyIndexErrors": true,
     "target": "es5",
     "lib": [
       "dom",
@@ -10,7 +11,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -18,9 +19,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "downlevelIteration": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src"
-  ]
+  ],
+  "extends": "./path.json"
 }

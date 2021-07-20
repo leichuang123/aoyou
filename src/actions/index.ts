@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT, SWITCH_LOADING, AUTHORITY } from '../constants/actoin_type'
+import { LOGIN, LOGOUT, SWITCH_LOADING } from '../constants/actoin_type'
 
 export const login = (data: Object) => {
   return {
@@ -16,13 +16,6 @@ export const logout = () => {
 export const switch_loading = (data: Object) => {
   return {
     type: SWITCH_LOADING,
-    data
-  }
-}
-
-export const authority = (data: Object) => {
-  return {
-    type: AUTHORITY,
     data
   }
 }

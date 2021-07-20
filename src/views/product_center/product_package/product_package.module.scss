@@ -1,0 +1,83 @@
+.category {
+  width: 120px;
+}
+
+.diyTime {
+  width: 100px;
+  margin-right: 16px;
+}
+
+.goodsGagination {
+  margin-top: 24px;
+}
+
+.saleInfo {
+  margin-top: 24px;
+  .realTime {
+    .table {
+      margin-top: 24px;
+    }
+  }
+}
+
+.search {
+  width: 200px;
+  margin-left: 24px;
+}
+
+.timeQuantum {
+  margin-top: 24px;
+  .table {
+    margin-top: 24px;
+  }
+}
+
+.quickDuration {
+  margin-top: 24px;
+  .quickList {
+    margin-left: 24px;
+  }
+  .addQuick {
+    margin-top: 24px;
+    .addInput {
+      width: 200px;
+      margin-right: 24px;
+      margin-left: 110px;
+    }
+  }
+  .customer {
+    margin-top: 24px;
+    .input {
+      width: 260px;
+      margin-left: 24px;
+    }
+  }
+  .xin {
+
+  }
+}
+
+.topbtn {
+  margin-left: 16px;
+}
+
+.itemLabel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.quickTitle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.xin {
+  display: inline-block;
+  margin-right: 4px;
+  color: #ff4d4f;
+  font-size: 16px;
+  position: relative;
+  top: 2px;
+}

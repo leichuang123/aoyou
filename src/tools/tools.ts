@@ -1,22 +1,13 @@
 
-import { TEST_ISINCOGNITOMODE, USER } from '../constants/storage_key'
+import { TEST_ISINCOGNITOMODE } from '../constants/storage_key'
 import { PLATFORM_TAG } from '../config/config'
-import VueCookies from 'vue-cookies'
+import { USER } from '../constants/storage_key'
 
-export const getUploadHeader: any = () => {
-  let user = store.get(USER) || null
-  // @ts-ignore
-  if (VueCookies.get('userInfo')) {
-    // @ts-ignore
-    user = VueCookies.get('userInfo')
-  } else if (localStorage.getItem('userInfo')) {
-    // @ts-ignore
-    user = JSON.parse(localStorage.getItem('userInfo'))
-  }
+export const getUploadHeader = () => {
+  const user = store.get(USER) || null
   return {
     token: user.token,
-    platformTag: PLATFORM_TAG,
-    channelNo: 2,
+    platformTag: PLATFORM_TAG
   }
 }
 
@@ -38,51 +29,143 @@ export const downloadXls = (content: string, filename = '') => {
   }
   elink.download = filename
   elink.style.display = "none";
-  let blob = new Blob([content], { 'type': 'application/vnd.ms-excel' });
+  let blob = new Blob([content], {'type': 'application/vnd.ms-excel'});
   elink.href = URL.createObjectURL(blob);
   document.body.appendChild(elink);
   elink.click();
   document.body.removeChild(elink);
 }
 
-export const getUrlParam = (url: string) => {
-  if (url.indexOf('?') === -1) {
-    return {}
-  }
-  const paramArr = url.split('?')[1].split('&')
-  const param: any = {}
-  paramArr.forEach((item: string) => {
-    param[item.split('=')[0]] = item.split('=')[1]
+export const formatProduct = (originList: any) => {
+  let list: any = []
+  originList.forEach((item: any) => {
+    var obj = {
+      label: item.name,
+      value: item.id + '',
+      id: item.id,
+      url: item.url || '',
+      parentId: item.parentId,
+      isLeaf: true,
+      state: item.state,
+    }
+    const key = item.parentId + ''
+    if (typeof list[item.parentId] === 'undefined') {
+      list[key] = [obj]
+    } else {
+      list[key].push(obj)
+    }
   })
-  return param
+  list = list.filter((item: any) => {
+    return typeof item !== 'undefined'
+  })
+  let index = list.length - 1
+  for (; index >= 1; index--) {
+    let litem = list[index]
+    list.splice(index, 1)
+    list.forEach((itemList: any) => {
+      itemList.forEach((item: any) => {
+        if (item.id === litem[0].parentId) {
+          item.children = litem
+          item.isLeaf = false
+        }
+      })
+    })
+  }
+  return list[0]
 }
 
-// 防抖处理:一般用于按钮重复点击，浏览器窗口缩放....
-// demo:onClick={debounce(this.handleOkInvite, 500)}
-export const debounce = (fn: (...args: any[]) => void, delay: number) => {
-  let timer: NodeJS.Timeout | null = null;//借助闭包
-  return function () {
-    if (timer) {
-      clearTimeout(timer)
+// 格式化数据中心数据
+export const formatDataCenter = (originList: any) => {
+  let list: any = []
+  originList.forEach((item: any) => {
+    var obj = {
+      label: item.name,
+      value: item.id + '',
+      id: item.id,
+      url: item.apiUrl || '',
+      parentId: item.parentId,
+      isLeaf: true,
+      state: item.status,
+      level: item.level
     }
-    timer = setTimeout(fn, delay) // 简化写法
+    const key = item.parentId + ''
+    if (typeof list[item.parentId] === 'undefined') {
+      list[key] = [obj]
+    } else {
+      list[key].push(obj)
+    }
+  })
+  list = list.filter((item: any) => {
+    return typeof item !== 'undefined'
+  })
+  let index = list.length - 1
+  for (; index >= 1; index--) {
+    let litem = list[index]
+    list.splice(index, 1)
+    list.forEach((itemList: any) => {
+      itemList.forEach((item: any) => {
+        if (item.id === litem[0].parentId) {
+          item.children = litem
+          item.isLeaf = false
+        }
+      })
+    })
   }
+  return list[0]
 }
 
-// 节流处理:一般用户输入框远程搜索...
-//  demo:onchange = throttle((e: any) => {
-//       ...
-//     }, 3000);
-export const throttle = (fn: { apply: (arg0: any, arg1: any[]) => void }, wait: number) => {
-  let flag = true
-  const interval = wait || 2000
-  return function (this: any, ...args: any) {
-    if (flag) {
-      fn.apply(this, args)
-      flag = false
-      setTimeout(() => {
-        flag = true
-      }, interval)
-    }
+export const formatMenu = (originList: any) => {
+  let list: any = []
+  if (originList.length === 0) {
+    return list
   }
+  originList.forEach((item: any) => {
+    var obj = {
+      id: item.id,
+      title: item.name,
+      key: item.url || '',
+      parentId: item.parentId,
+      isLeaf: true,
+    }
+    const key = item.parentId + ''
+    if (typeof list[item.parentId] === 'undefined') {
+      list[key] = [obj]
+    } else {
+      list[key].push(obj)
+    }
+  })
+  
+  list = list.filter((item: any) => {
+    return typeof item !== 'undefined'
+  })
+  if (list.length === 1 && list[0].parentId === 0) {
+    // console.log(list)
+    return list[0]
+  }
+  let index = list.length - 1
+  for (; index >= 1; index--) {
+    let litem = list[index]
+    list.splice(index, 1)
+    list.forEach((itemList: any) => {
+      itemList.forEach((item: any) => {
+        if (item.id === litem[0].parentId) {
+          item.subList = litem
+          item.isLeaf = false
+        }
+      })
+    })
+  }
+  return list.length > 0 ? list[0] : []
+}
+
+export function codeInfoListFilter(list = []) {
+  let newList:any = [];
+  try {
+    newList = list.filter((item:any) => {
+      return +item.state === 1;
+    });
+  } catch (error) {
+    console.warn('codeInfoListFilter err:',error);
+  }
+  return newList;
 }

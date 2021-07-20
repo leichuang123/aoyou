@@ -1,0 +1,37 @@
+.preSoftContent {
+  display: flex;
+  border: solid 1px #d9d9d9;
+  outline: none;
+}
+
+.softwareInput {
+  border: none;
+  flex: 1;
+}
+
+.preSoftare {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.editForm {
+  .leftAlign {
+    text-align: left;
+  }
+}
+
+.tableEdit {
+  color: #1890ff;
+  cursor: pointer;
+}
+
+.tableCopy {
+  color: #1890ff;
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+.bottomPlaceholder {
+  height: 60px;
+}

@@ -1,0 +1,42 @@
+
+.balanceContent {
+  justify-content: flex-start;
+  margin-bottom: 24px;
+  .balanceItem {
+    margin-bottom: 0;
+    vertical-align: middle;
+    margin: 0 6px;
+    .balanceInput {
+      width: 80px;
+    }
+    .balanceMsgInput {
+      width: 300px;
+    }
+  }
+}
+
+.dateContent {
+  margin-bottom: 12px;
+  .dateInfo {
+    justify-content: flex-start;
+    margin-bottom: 12px;
+    .separator {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .dateCrystal {
+      width: 100px;
+      margin-left: 60px;
+      margin-right: 20px;
+    }
+  }
+}
+.addDateBtn {
+  margin-bottom: 24px;
+}
+.delDateBtn {
+  margin-left: 20px;
+}

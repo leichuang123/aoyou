@@ -3,16 +3,17 @@
 
 declare const md5:(str: string) => string
 
+declare namespace layer {
+  function load(type: number, params: any): any
+  function open(params: any): any
+  function close(index: number): any
+  function closeAll(): any
+}
+
 declare namespace store {
   function get(key: string): any
   function set(key: string, value: any): void
   function remove(key: string): any
-}
-
-declare namespace window {
-  const location: any
-  const open: any
-  const loginUrl: any
 }
 
 declare namespace Ajax {
@@ -29,11 +30,8 @@ declare namespace Ajax {
   // 请求接口数据
   export interface AjaxResponse {
     code: number;
-    info: any;
-    msg: string;
-    success: string;
-    data?: any,
-    message: string,
+    message: string;
+    data: any,
   }
 }
 
@@ -41,8 +39,4 @@ declare module request {
   interface param {
     [key: string]: any,
   }
-}
-
-declare interface Window {
-  DDLogin: any
 }

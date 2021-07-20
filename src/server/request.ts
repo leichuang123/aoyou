@@ -3,7 +3,6 @@ import { TIMEOUT, BASE_URL } from "../config/request_config"
 import { USER } from '../constants/storage_key'
 import stores from '../store'
 import { switch_loading } from '../actions/index'
-import VueCookies from 'vue-cookies'
 
 const service = axios.create({
   // baseURL: process.env.VUE_APP_BASE_URL
@@ -12,60 +11,42 @@ const service = axios.create({
 })
 
 // 请求拦截器
-service.interceptors.request.use((config: any) => {
-  let user = store.get(USER) || null
-  // @ts-ignore
-  if (VueCookies.get('userInfo')) {
-    // @ts-ignore
-    user = VueCookies.get('userInfo')
-  } else if (localStorage.getItem('userInfo')) {
-    // @ts-ignore
-    user = JSON.parse(localStorage.getItem('userInfo'))
+service.interceptors.request.use(config => {
+  const user = store.get(USER) || null
+  if (!config.data) {
+    config.data = {}
   }
-  if (user !== null) {
-    if (!config.data) {
-      config.data = {}
-    }
-  }
-  if (!config.data.isDisableLoading) { 
-    stores.dispatch(switch_loading({show: true}))
+  if (!config.data.isDisableLoading) {
+    // stores.dispatch(switch_loading({show: true}))
     delete config.data.isDisableLoading
+    layer.load(0, { shade: 0.4 })
   }
+  if (!config.headers) {
+    config.headers = {}
+  }
+  config.headers.platformTag = 2
   if (user !== null) {
-    if (!config.headers) {
-      config.headers = {}
+    if (user.token) {
+      config.headers.token = user.token
     }
-    config.headers.token = user.token
   }
-  config.headers.platformTag = 1
-  config.headers.channelNo = stores.getState().channelNo
+  // config.headers.channelNo = 1;
   return config;
 })
 
 // 响应拦截器
-service.interceptors.response.use((response: any) => {
-  stores.dispatch(switch_loading({show: false}))
-  if (response.data.code * 1 === 12010005 || response.data.code * 1 === 12010007) {
+service.interceptors.response.use(response => {
+  // stores.dispatch(switch_loading({show: false}))
+  layer.closeAll()
+  if (response.data.code  === 12010005 || response.data.code === 12010007) {
     store.remove(USER)
-    // if (localStorage.getItem('INIT_URL')) {
-    //   window.location.href = localStorage.getItem('INIT_URL') || ''
-    //   return
-    // }
-    // window.location.reload()
-    // @ts-ignore
-    if (window.loginUrl) { 
-      // @ts-ignore
-      var loginUrl = window.loginUrl
-      window.location.href = `${loginUrl}${loginUrl.indexOf('?') === -1 ? '?' : '&'}fromType=0&from=${encodeURIComponent(window.location.href)}`
-    } else {
-      if (process.env.REACT_APP_ENV === 'development' || process.env.REACT_APP_ENV === 'test') {
-        window.location.href = 'http://localhost:3000#/login'
-      } else {
-        window.location.href = 'https://yunny.yunzhiqu.com/pc/strategy/index.html#/login'
-      }
-    }
-    return
+    window.location.reload()
   }
+
+  if (!response.data.message) {
+    response.data.message = '服务器异常'
+  }
+
   let filename = ''
   if (response.headers['content-disposition']) {
     filename = decodeURIComponent(response.headers['content-disposition'].replace('filename=', '').replace('attachment;', ''))
@@ -74,8 +55,11 @@ service.interceptors.response.use((response: any) => {
     response.headers.filename = filename
   }
   return response
-}, () => {  // 网络或服务器异常时
+}, err => {
+  
+  console.log(err)
   stores.dispatch(switch_loading({ show: false }))
+  layer.closeAll()
 })
 
 export default service;
